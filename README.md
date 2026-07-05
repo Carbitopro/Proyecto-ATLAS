@@ -42,3 +42,7 @@ Convertirme en desarrollador de Automatización con IA construyendo proyectos re
 ## Inicio
 
 Julio 2026
+
+
+## Diario
+Hoy he aprendido a utilizar la terminal de macOS y a entender  mejor como funciona git
