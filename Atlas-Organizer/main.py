@@ -5,13 +5,19 @@ carpeta = Path("sandbox")
 print(f"Contenido de {carpeta.name}:")
 
 
-imagenes = carpeta / 'Imagenes'
-imagenes.mkdir(exist_ok=True)
+tipos = {
+    '.jpg': 'Imagenes',
+    '.pdf': 'Documentos',
+    ".txt": "Documentos",
+    ".png": "Imagenes",
+}
+
 
 for elemento in carpeta.iterdir():
     if elemento.is_file():
 
-        if elemento.suffix == '.jpg':
-            shutil.move(elemento, imagenes)
-        else:
-            print('not a .jpg')
+        carpeta_destino = tipos.get(elemento.suffix, "Otros")
+        destino = carpeta/carpeta_destino
+
+        destino.mkdir(exist_ok=True)
+        shutil.move(elemento, destino)
